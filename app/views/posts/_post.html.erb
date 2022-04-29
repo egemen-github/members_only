@@ -1,17 +1,16 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>User:</strong>
+<diV id="<%= dom_id post %>", class="card">
+  <div class="card-header">
     <%= post.user_id %>
-  </p>
-
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
-
-  <p>
-    <strong>Content:</strong>
-    <%= post.content %>
-  </p>
-
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">
+      <%= post.title %>
+    </h4>
+    <p class="card-text">
+      <%= post.content %>
+    </p>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <%= link_to "Show this post", post, class: "btn btn-outline-primary btn-sm" %>
+    </div>
+  </div>
 </div>

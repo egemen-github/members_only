@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+  <div class="container">
+    <%= link_to 'Twitter Clone', root_path, class:"navbar-brand mb-0 h1 fs-4 fw-bold"%>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to 'New Post', new_post_path, class:"nav-link active"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'All Posts', posts_path, class:"nav-link active"%>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+

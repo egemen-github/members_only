@@ -1,6 +1,10 @@
-<diV id="<%= dom_id post %>", class="card">
+<div class="card">
   <div class="card-header">
-    <%= post.user_id %>
+    <% if user_signed_in? %>
+      <%= User.find(post.user_id).email %>
+    <% else %>
+      <span class="align-middle fst-italic">Anonim User</span>
+    <% end %>
   </div>
   <div class="card-body">
     <h4 class="card-title">

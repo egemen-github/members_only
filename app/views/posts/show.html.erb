@@ -1,13 +1,17 @@
 <p style="color: green"><%= notice %></p>
 <div class="card">
   <div class="card-header">
-    <%= @post.user_id %>
+    <% if user_signed_in? %>
+      <%= User.find(@post.user_id).email %>
+    <% else %>
+      <span class="align-middle fst-italic">Anonim User</span>
+    <% end %>
   </div>
   <div class="card-body">
     <h5 class="card-title"><%= @post.title %></h5>
     <p class="card-text"><%= @post.content %></p>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <% if user_signed_in? %>
+    <% if user_signed_in? and @post.user_id == current_user.id %>
       <%= button_to "Destroy this post", @post, method: :delete, class: "btn btn-outline-danger btn-sm" %>
       <%= link_to "Edit this post", edit_post_path(@post), class: "btn btn-outline-success btn-sm" %>
     <% end %>

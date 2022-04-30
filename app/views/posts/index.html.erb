@@ -4,7 +4,7 @@
 <br />
 
 <div id="posts">
-  <% @posts.each do |post| %>
+  <% @posts.reverse_each do |post| %>
     <%= render post %>
     </br>
   <% end %>

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
   <div class="container">
-    <%= link_to 'Twitter Clone', root_path, class:"navbar-brand mb-0 h1 fs-4 fw-bold"%>
+    <%= link_to 'Members Only', posts_path, class:"navbar-brand mb-0 h1 fs-4 fw-bold"%>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -14,10 +14,10 @@
             <%= link_to 'New Post', new_post_path, class:"nav-link active"%>
           </li>
           <li class="nav-item">
-            <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class:"nav-link active"%>
+            <%= link_to 'Edit Profile', edit_user_registration_path, class:"nav-link active"%>
           </li>
           <li class="nav-item">
-            <%= link_to 'Edit Profile', edit_user_registration_path, class:"nav-link active"%>
+            <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class:"btn btn-light"%>
           </li>
         <% else %>
           <li class="nav-item">

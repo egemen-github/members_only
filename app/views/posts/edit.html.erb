@@ -1,9 +1,13 @@
-<h1>Editing post</h1>
+<% if user_signed_in? %>
+  <h1>Editing post</h1>
 
-<%= render "form", post: @post %>
+  <%= render "form", post: @post %>
 
-</br>
-<div>
-  <%= link_to "Back to posts", posts_path, class: "btn btn-outline-dark btn-sm" %>
-  <%= link_to "Show this post", @post, class: "btn btn-outline-secondary btn-sm" %>
-</div>
+  </br>
+  <div>
+    <%= link_to "Back to posts", posts_path, class: "btn btn-outline-dark btn-sm" %>
+    <%= link_to "Show this post", @post, class: "btn btn-outline-secondary btn-sm" %>
+  </div>
+<% else %>
+  <h1>No no no! You are not allowed.</h1>
+<% end %>

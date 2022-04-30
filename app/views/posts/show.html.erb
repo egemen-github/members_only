@@ -7,8 +7,10 @@
     <h5 class="card-title"><%= @post.title %></h5>
     <p class="card-text"><%= @post.content %></p>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <% if user_signed_in? %>
       <%= button_to "Destroy this post", @post, method: :delete, class: "btn btn-outline-danger btn-sm" %>
       <%= link_to "Edit this post", edit_post_path(@post), class: "btn btn-outline-success btn-sm" %>
+    <% end %>
       <%= link_to "Back to posts", posts_path, class: "btn btn-outline-primary btn-sm"  %>
     </div>
   </div>
